@@ -12,6 +12,8 @@
 		E8841E3C265837E400971705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8841E3B265837E400971705 /* Assets.xcassets */; };
 		E8841E3F265837E400971705 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8841E3E265837E400971705 /* Preview Assets.xcassets */; };
 		E8841E472658388F00971705 /* AnimationRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E462658388F00971705 /* AnimationRange.swift */; };
+		E8841E492658457400971705 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E482658457400971705 /* DataService.swift */; };
+		E8841E4B26584FE900971705 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E4A26584FE900971705 /* ArticleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E8841E3E265837E400971705 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8841E40265837E400971705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8841E462658388F00971705 /* AnimationRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationRange.swift; sourceTree = "<group>"; };
+		E8841E482658457400971705 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		E8841E4A26584FE900971705 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				E8841E37265837E100971705 /* ProjectXApp.swift */,
 				E8841E39265837E100971705 /* ContentView.swift */,
 				E8841E462658388F00971705 /* AnimationRange.swift */,
+				E8841E4A26584FE900971705 /* ArticleModel.swift */,
+				E8841E482658457400971705 /* DataService.swift */,
 				E8841E3B265837E400971705 /* Assets.xcassets */,
 				E8841E40265837E400971705 /* Info.plist */,
 				E8841E3D265837E400971705 /* Preview Content */,
@@ -142,8 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8841E3A265837E100971705 /* ContentView.swift in Sources */,
+				E8841E4B26584FE900971705 /* ArticleModel.swift in Sources */,
 				E8841E472658388F00971705 /* AnimationRange.swift in Sources */,
 				E8841E38265837E100971705 /* ProjectXApp.swift in Sources */,
+				E8841E492658457400971705 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
