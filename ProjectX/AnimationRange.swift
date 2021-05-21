@@ -15,9 +15,7 @@ struct OpeningScreen: View {
     var body: some View {
         
         ZStack {
-            
             //MARK: -Normal View
-
             ContentView()
             //MARK: -Animation
             ZStack {
@@ -49,12 +47,6 @@ struct OpeningScreen: View {
                 showAnimation.toggle()
             }
         }
-        
-            
-
-        
-        
-        
     }
 }
 

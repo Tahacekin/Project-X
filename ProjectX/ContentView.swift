@@ -11,7 +11,7 @@ struct ContentView: View {
 @State var results = [Articles]()
 
    var body: some View {
-      Text("Project X- Test still testing")
+      Text("Project X")
           .font(.title)
           .fontWeight(.bold)
     }
