@@ -9,24 +9,29 @@ import Foundation
 
 //MARK: Try The DesingCode API way but for the models make them optional for example var name: String?
 
-class API: ObservableObject {
-  @Published var apiPost = [Post]()
+class API {
 
-  func load(completion: @escaping (Post) -> ()) {
-    guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2021-05-20&to=2021-05-20&sortBy=popularity&apiKey=aa380f833fc54f3e832f7074ba292130") else { return }
+  func loadData(complition: @escaping (Response) -> ()) {
 
-    URLSession.shared.dataTask(with: url) { data, response, error in
-      let decode = try! JSONDecoder().decode(Post.self, from: data!)
+    guard let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=aa380f833fc54f3e832f7074ba292130")
+    else { return }
 
-      DispatchQueue.main.async {
-        completion(decode)
+    let request = URLRequest(url: url)
+
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      if let data = data {
+        if let decodedData = try? JSONDecoder().decode(Response.self, from: data) {
+          DispatchQueue.main.async {
+            complition(decodedData)
+          }
+          return
+        }
+
       }
+      print("Fetch Failed \(error?.localizedDescription ?? "Unkwon Error")")
+
     }.resume()
-
-
   }
-
-
 }
 
 
