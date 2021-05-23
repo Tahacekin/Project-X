@@ -11,8 +11,13 @@ struct Response: Codable {
   var articles: [Result]
 }
 
-struct Result: Codable {
-  var title: String?
-  var description: String?
-  var url: URL
+struct Result: Codable, Hashable {
+  var title: String
+  var description: String
+  var url: URL?
+}
+
+struct Source: Codable {
+  var id: String?
+  var name: String?
 }

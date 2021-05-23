@@ -13,7 +13,7 @@ class API {
 
   func loadData(complition: @escaping (Response) -> ()) {
 
-    guard let url = URL(string: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=aa380f833fc54f3e832f7074ba292130")
+    guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2021-05-22&to=2021-05-22&sortBy=popularity&apiKey=aa380f833fc54f3e832f7074ba292130")
     else { return }
 
     let request = URLRequest(url: url)
@@ -23,6 +23,7 @@ class API {
         if let decodedData = try? JSONDecoder().decode(Response.self, from: data) {
           DispatchQueue.main.async {
             complition(decodedData)
+            print(decodedData)
           }
           return
         }
@@ -33,5 +34,3 @@ class API {
     }.resume()
   }
 }
-
-
