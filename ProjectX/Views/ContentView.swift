@@ -30,7 +30,7 @@ struct ContentView: View {
           self.testing = tt
         }
       }
-    }.navigationTitle("News Yesting Something in git")
+    }.navigationTitle("News")
     }
   }
 
