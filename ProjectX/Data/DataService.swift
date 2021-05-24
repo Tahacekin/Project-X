@@ -6,14 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 //MARK: Try The DesingCode API way but for the models make them optional for example var name: String?
 
 class API {
+  var yourURL: String
+
+  init(yourURL: String) {
+    self.yourURL = yourURL
+  }
 
   func loadData(complition: @escaping (Response) -> ()) {
 
-    guard let url = URL(string: "https://newsapi.org/v2/everything?q=apple&from=2021-05-22&to=2021-05-22&sortBy=popularity&apiKey=aa380f833fc54f3e832f7074ba292130")
+    guard let url = URL(string: yourURL)
     else { return }
 
     let request = URLRequest(url: url)
@@ -34,3 +40,17 @@ class API {
     }.resume()
   }
 }
+
+//public extension URL {
+//  func loadimage() -> UIImage {
+//
+//    do {
+//      // Add The urlToImage here
+//    }
+//    catch {
+//      // Handle Errors
+//    }
+//
+//    return UIImage()
+//  }
+//}

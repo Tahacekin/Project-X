@@ -12,9 +12,6 @@ struct OpeningScreen: View {
     @State var showAnimation = true
     @State var rotation = false
 
-//  @State var testing = Response(articles: [ Result(title: "hello", description: "", url: nil) ])
-//  @State var secondCall = Result(title: "Hello", description: "", url: nil)
-
     var body: some View {
         
         ZStack {
@@ -49,10 +46,6 @@ struct OpeningScreen: View {
             DispatchQueue.main.asyncAfter(deadline: .now()+0.75) {
                 showAnimation.toggle()
             }
-
-//          API().loadData { (tt) in
-//            self.testing = tt
-//          }
         }
     }
 }
