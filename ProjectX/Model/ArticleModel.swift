@@ -22,3 +22,7 @@ struct Source: Codable {
   var id: String?
   var name: String?
 }
+
+struct ViewModel: Codable {
+  var selectedArticle: Result?
+}
