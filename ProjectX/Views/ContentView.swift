@@ -9,41 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
 
-  @State var post = Response(articles: [ Result(title: "", description: "", url: URL(string: "apple.com")) ])
+  @StateObject var post = NewsViewModel()
   @State private var showSafari = false
-  @State var viewModel = ViewModel()
+  @StateObject var currentdate = CurrentDate()
   
   var body: some View {
 
     NavigationView {
       ScrollView {
-        ForEach(post.articles, id: \.self) { item in
+        ForEach(post.news.articles, id: \.self) { item in
 
-          VStack(alignment: .leading) {
-            Text(item.title)
-              .foregroundColor(.black)
-              .font(.title)
-              .onTapGesture {
-                // Add the captured struct from memory if needed
-                viewModel.selectedArticle = item
-                showSafari = true
-              }
-              .sheet(isPresented: $showSafari) {
-                if let stringURL = viewModel.selectedArticle?.url, let url = URL(string: "\(stringURL)") {
-                  SafariView(url: url)
+          ZStack {
+
+            Image(uiImage: "\(String(describing: item.urlToImage))".loadimage())
+              .resizable()
+              .scaledToFit()
+              .padding()
+
+            VStack(alignment: .leading) {
+              Text(item.title)
+                .foregroundColor(.black)
+                .font(.title)
+                .onTapGesture {
+                  // Add the captured struct from memory if needed
+                  post.selectedArticle = item
+                  showSafari = true
+                }
+                .sheet(isPresented: $showSafari) {
+                  if let stringURL = post.selectedArticle?.url, let url = URL(string: "\(stringURL)") {
+                    SafariView(url: url)
+                  }
                 }
 
 
-              }
+              Text(item.description)
+                .font(.subheadline)
+            }.frame(width: 350, height: 100, alignment: .center)
+          }
 
-
-            Text(item.description)
-              .font(.subheadline)
-          }.frame(width: 350, height: 100, alignment: .center)
-        }
+          }
         .onAppear {
-          API(yourURL: "https://newsapi.org/v2/everything?q=apple&from=2021-05-23&to=2021-05-23&sortBy=popularity&apiKey=aa380f833fc54f3e832f7074ba292130").loadData { (tt) in
-            self.post = tt
+          API(yourURL: "https://newsapi.org/v2/everything?q=apple&from=\(currentdate)&to=\(currentdate)&sortBy=popularity&apiKey=aa380f833fc54f3e832f7074ba292130").loadData { (news) in
+            self.post.news = news
           }
         }
       }.navigationTitle("News")

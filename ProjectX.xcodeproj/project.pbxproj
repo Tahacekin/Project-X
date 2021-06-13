@@ -15,8 +15,8 @@
 		E8841E472658388F00971705 /* OpeningScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E462658388F00971705 /* OpeningScreen.swift */; };
 		E8841E492658457400971705 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E482658457400971705 /* DataService.swift */; };
 		E8841E4B26584FE900971705 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8841E4A26584FE900971705 /* ArticleModel.swift */; };
-		E8963EBB265C3987000F49CB /* SafariLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8963EBA265C3987000F49CB /* SafariLaunchScreen.swift */; };
-		E8D2C646265BC2F400FA482D /* TeslaNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D2C645265BC2F400FA482D /* TeslaNewsView.swift */; };
+		E8963EBB265C3987000F49CB /* CurrentDateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8963EBA265C3987000F49CB /* CurrentDateData.swift */; };
+		E8D2C646265BC2F400FA482D /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8D2C645265BC2F400FA482D /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		E8841E462658388F00971705 /* OpeningScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningScreen.swift; sourceTree = "<group>"; };
 		E8841E482658457400971705 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E8841E4A26584FE900971705 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
-		E8963EBA265C3987000F49CB /* SafariLaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariLaunchScreen.swift; sourceTree = "<group>"; };
-		E8D2C645265BC2F400FA482D /* TeslaNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaNewsView.swift; sourceTree = "<group>"; };
+		E8963EBA265C3987000F49CB /* CurrentDateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDateData.swift; sourceTree = "<group>"; };
+		E8D2C645265BC2F400FA482D /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +66,7 @@
 			children = (
 				E8841E37265837E100971705 /* ProjectXApp.swift */,
 				E8D2C647265BC30A00FA482D /* Views */,
+				E8B35C102675E51600E8FA64 /* ViewModels */,
 				E8963EB9265C3941000F49CB /* Model */,
 				E8963EB8265C3927000F49CB /* Data */,
 				E8841E3B265837E400971705 /* Assets.xcassets */,
@@ -87,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				E8841E482658457400971705 /* DataService.swift */,
-				E8963EBA265C3987000F49CB /* SafariLaunchScreen.swift */,
+				E8963EBA265C3987000F49CB /* CurrentDateData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -100,12 +101,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E8B35C102675E51600E8FA64 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E8D2C645265BC2F400FA482D /* NewsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E8D2C647265BC30A00FA482D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E8841E462658388F00971705 /* OpeningScreen.swift */,
 				E8841E39265837E100971705 /* ContentView.swift */,
-				E8D2C645265BC2F400FA482D /* TeslaNewsView.swift */,
+				E8841E462658388F00971705 /* OpeningScreen.swift */,
 				E85263D0265ED147003D7674 /* SafariView.swift */,
 			);
 			path = Views;
@@ -181,11 +189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8841E3A265837E100971705 /* ContentView.swift in Sources */,
-				E8963EBB265C3987000F49CB /* SafariLaunchScreen.swift in Sources */,
+				E8963EBB265C3987000F49CB /* CurrentDateData.swift in Sources */,
 				E85263D1265ED147003D7674 /* SafariView.swift in Sources */,
 				E8841E4B26584FE900971705 /* ArticleModel.swift in Sources */,
 				E8841E472658388F00971705 /* OpeningScreen.swift in Sources */,
-				E8D2C646265BC2F400FA482D /* TeslaNewsView.swift in Sources */,
+				E8D2C646265BC2F400FA482D /* NewsViewModel.swift in Sources */,
 				E8841E38265837E100971705 /* ProjectXApp.swift in Sources */,
 				E8841E492658457400971705 /* DataService.swift in Sources */,
 			);

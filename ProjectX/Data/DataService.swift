@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-//MARK: Try The DesingCode API way but for the models make them optional for example var name: String?
 
 class API {
   var yourURL: String
@@ -41,16 +40,25 @@ class API {
   }
 }
 
-//public extension URL {
-//  func loadimage() -> UIImage {
-//
-//    do {
-//      // Add The urlToImage here
-//    }
-//    catch {
-//      // Handle Errors
-//    }
-//
-//    return UIImage()
-//  }
-//}
+extension String {
+
+  func loadimage() -> UIImage {
+
+    do {
+
+      guard let url = URL(string: self) else {
+        return UIImage()
+      }
+
+      let data: Data = try Data(contentsOf: url)
+
+      return UIImage(data: data) ?? UIImage()
+    }
+    catch {
+      print("Couldn't load the Images")
+    }
+
+
+    return UIImage()
+  }
+}

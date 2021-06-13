@@ -15,14 +15,10 @@ struct Result: Codable, Hashable {
   var title: String
   var description: String
   var url: URL?
-//  var urlToImage: URL
+  var urlToImage: String?
 }
 
 struct Source: Codable {
   var id: String?
   var name: String?
-}
-
-struct ViewModel: Codable {
-  var selectedArticle: Result?
 }
