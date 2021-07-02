@@ -15,7 +15,7 @@ struct Result: Codable, Hashable {
   var title: String
   var description: String
   var url: URL?
-  var urlToImage: String?
+  var urlToImage: URL
 }
 
 struct Source: Codable {

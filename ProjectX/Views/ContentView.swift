@@ -12,23 +12,25 @@ struct ContentView: View {
   @StateObject var post = NewsViewModel()
   @State private var showSafari = false
   @StateObject var currentdate = CurrentDate()
-  
+  @State var searchText = ""
+
   var body: some View {
 
     NavigationView {
       ScrollView {
         ForEach(post.news.articles, id: \.self) { item in
 
-          ZStack {
+          HStack {
 
-            Image(uiImage: "\(String(describing: item.urlToImage))".loadimage())
-              .resizable()
-              .scaledToFit()
-              .padding()
+            AsyncImage(url: item.urlToImage) { image in
+              image.resizable()
+            } placeholder: {
+              Color.gray
+            }.frame(width: 150, height: 100)
+              .clipShape(RoundedRectangle(cornerRadius: 21))
 
             VStack(alignment: .leading) {
               Text(item.title)
-                .foregroundColor(.black)
                 .font(.title)
                 .onTapGesture {
                   // Add the captured struct from memory if needed
@@ -45,7 +47,9 @@ struct ContentView: View {
               Text(item.description)
                 .font(.subheadline)
             }.frame(width: 350, height: 100, alignment: .center)
-          }
+          }.frame(width: 388, height: 150)
+
+          Divider()
 
           }
         .onAppear {
@@ -54,6 +58,14 @@ struct ContentView: View {
           }
         }
       }.navigationTitle("News")
+    }
+  }
+
+  var searchResults: String? {
+    if searchText.isEmpty {
+      return post.selectedArticle?.title
+    } else {
+      return post.selectedArticle?.title
     }
   }
 

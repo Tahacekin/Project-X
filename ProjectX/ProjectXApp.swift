@@ -11,7 +11,7 @@ import SwiftUI
 struct ProjectXApp: App {
     var body: some Scene {
         WindowGroup {
-          OpeningScreen()
+          ContentView()
         }
     }
 }
